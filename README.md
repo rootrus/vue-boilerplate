@@ -13,22 +13,26 @@ project
 ├── public
 │   └── index.html
 ├── src
+│   ├── api
+│   │   └── [API files, e.g. user.js, etc.]
 │   ├── assets
 │   │   └── [asset files, such as images, etc.]
 │   ├── components
 │   │   └── [Vue components, e.g. Button.vue, etc.]
-│   ├── views
-│   │   └── [Vue views, e.g. Home.vue, etc.]
+│   ├── i18n
+│   │   └── [Vue i18n, e.g. Home.vue, etc.]
+│   ├── mixins
+│   │   └── [Vue mixins, e.g. lodash-es.js, etc.]
 │   ├── router
 │   │   └── index.js
 │   ├── store
 │   │   └── [Vuex store files, e.g. index.js, etc.]
-│   ├── api
-│   │   └── [API files, e.g. user.js, etc.]
-│   ├── utils
-│   │   └── [Utility files, e.g. helper.js, etc.]
 │   ├── styles
 │   │   └── [CSS files, e.g. main.css, etc.]
+│   ├── utils
+│   │   └── [Utility files, e.g. helper.js, etc.]
+│   ├── views
+│   │   └── [Vue views, e.g. Home.vue, etc.]
 │   ├── App.vue
 │   └── main.js
 ├── tests
@@ -40,12 +44,14 @@ project
 
 - `public`: contains the index.html file, which is the main template for the application.
 - `src`: contains all of the source code for the application.
+- `api`: (optional) contains API files that handle communication with a server or external API.
 - `assets`: contains any static assets that are used in the application, such as images.
 - `components`: contains individual Vue components that make up the UI.
-- `views`: contains Vue views, which are combinations of components that make up the application's pages.
+- `i18n`: contains individual language to display on the frontend.
+- `mixins`: Mixins allow you to extract common functionality from multiple components and put it into a single, reusable piece of code. For example, you might have a mixin that implements a generic API call to fetch data from a backend service. You can use this mixin in all the components that need to make API calls, eliminating the need to repeat the same code multiple times.
 - `router`: contains the Vue Router configuration, which is used to define the application's routes.
 - `store`: (optional) contains the Vuex store, which is used to manage the global state of the application.
-- `api`: (optional) contains API files that handle communication with a server or external API.
+- `views`: contains Vue views, which are combinations of components that make up the application's pages.
 - `utils`: (optional) contains utility files that provide helper functions or reusable code.
 - `App.vue`: is the root component of the application.
 - `main.js`: is the entry point for the application.

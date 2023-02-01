@@ -9,18 +9,23 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store  from './store'
+import lodashEsMixin from './mixins/lodash-es.js'
+import * as _ from 'lodash-es'
 
-/** MODULES SECTION */
-import loginModule from "./modules/login";
-import productsModule from "./modules/products";
+const lodashMixin = {
+     install(Vue) {
+       Vue.prototype._ = _
+     },
+   }
+const app = createApp({
+     extends: App,
+     // components: {
+     //   Hello,
+     //   Thing,
+     // }
+})
 
-import { registerModules } from "./register-modules";
-registerModules({
-     login: loginModule,
-     products: productsModule
-});
-
-const app = createApp(App)
+app.use(lodashMixin)
 app.use(router)
 app.use(store)
 app.mount('#app')
