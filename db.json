@@ -1,0 +1,65 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+
+
+
+  "success_request": {
+    "success": true,
+    "data": [
+      {
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+      }
+    ]
+  },
+
+
+  "fail_request": {
+    "success": false,
+    "error_code": "E004",
+    "error_message": "The operation failed.",
+    "error_details": {
+      "message_key": "error.fail",
+      "message_args": {}
+    }
+  },
+
+
+  "notfound_request": {
+    "success": false,
+    "error_code": "E003",
+    "error_message": "The requested resource could not be found.",
+    "error_details": {
+      "message_key": "error.not_found",
+      "message_args": {}
+    }
+  },
+
+
+  "forbiddenaccess_request" : {
+    "success": false,
+    "error_code": "E002",
+    "error_message": "Access to the resource is forbidden.",
+    "error_details": {
+      "message_key": "error.forbidden",
+      "message_args": {"username": "1321"}
+    }
+  } 
+}

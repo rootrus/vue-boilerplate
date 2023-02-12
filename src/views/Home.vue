@@ -3,18 +3,36 @@
     <h1>
       Home Page
     </h1>
+data : {{JSON.stringify($store.state.userprofile)}}
+<!-- id: {{$store.state.userprofile[0].id}} -->
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aliquid
-      impedit quod voluptatibus maiores provident, perspiciatis laborum.
-      Molestias exercitationem quod ut aspernatur nostrum debitis molestiae
-      ipsam, dolores assumenda alias quidem.
-    </p>
+    <div>
+    <MyTable
+      :headers="headers"
+      :rows="rows"
+    />
   </div>
+  </div>
+
 </template>
 
+
 <script>
+import MyTable from '../components/modules/Table.vue'
+
 export default {
-  name: "Home"
-};
+    name: "Home",
+  components: {
+    MyTable
+  },
+  data() {
+    return {
+      headers: ['ID', 'Name', 'Email'],
+      rows: [
+        { id: 1, name: 'John Doe', email: 'johndoe@example.com' },
+        { id: 2, name: 'Jane Doe', email: 'janedoe@example.com' }
+      ]
+    }
+  }
+}
 </script>
